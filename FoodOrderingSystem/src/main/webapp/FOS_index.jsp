@@ -13,9 +13,8 @@
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <link rel="shortcut icon" href="images/favicon.png" type="">
 
-  <title> Feane </title>
+  <title>Burger Hut </title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
@@ -46,7 +45,7 @@
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="index.html">
             <span>
-              Feane
+              Burger Hut
             </span>
           </a>
 
@@ -60,13 +59,13 @@
                 <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Menu</a>
+                <a class="nav-link" href="FOS_menu.jsp">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="FOS_signup.jsp">Signup</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Book Table</a>
+                <a class="nav-link" href="FOS_login.jsp">Login</a>
               </li>
             </ul>
             <div class="user_option">
@@ -151,10 +150,10 @@
                 <div class="col-md-7 col-lg-6 ">
                   <div class="detail-box">
                     <h1>
-                      Fast Food Restaurant
+                      BURGER HUT
                     </h1>
                     <p>
-                      Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
+                      Our burger restaurant is the perfect place to satisfy your cravings for a juicy, delicious burger. We use only the freshest ingredients and our burgers are made to order. We also have a wide variety of toppings to choose from, so you can create your perfect burger. Whether you're in the mood for a classic cheeseburger or something more adventurous, we have something for everyone.
                     </p>
                     <div class="btn-box">
                       <a href="" class="btn1">
@@ -172,10 +171,10 @@
                 <div class="col-md-7 col-lg-6 ">
                   <div class="detail-box">
                     <h1>
-                      Fast Food Restaurant
+                      BURGER HUT
                     </h1>
                     <p>
-                      Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
+                      Our burger restaurant is the perfect place to satisfy your cravings for a juicy, delicious burger. We use only the freshest ingredients and our burgers are made to order. We also have a wide variety of toppings to choose from, so you can create your perfect burger. Whether you're in the mood for a classic cheeseburger or something more adventurous, we have something for everyone.
                     </p>
                     <div class="btn-box">
                       <a href="" class="btn1">
@@ -193,10 +192,10 @@
                 <div class="col-md-7 col-lg-6 ">
                   <div class="detail-box">
                     <h1>
-                      Fast Food Restaurant
+                      BURGER HUT
                     </h1>
                     <p>
-                      Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
+                      Our burger restaurant is the perfect place to satisfy your cravings for a juicy, delicious burger. We use only the freshest ingredients and our burgers are made to order. We also have a wide variety of toppings to choose from, so you can create your perfect burger. Whether you're in the mood for a classic cheeseburger or something more adventurous, we have something for everyone.
                     </p>
                     <div class="btn-box">
                       <a href="" class="btn1">
@@ -256,10 +255,10 @@
         <div class="col-md-4 footer-col">
           <div class="footer_detail">
             <a href="" class="footer-logo">
-              Feane
+              burger hut
             </a>
             <p>
-              Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with
+              We make our burgers with love and care. You can taste the difference.
             </p>
             <div class="footer_social">
               <a href="">
@@ -295,7 +294,7 @@
       <div class="footer-info">
         <p>
           &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://html.design/">Infinity Designs</a>
+          <a href="https://html.design/">NIBM HDSE22.2F</a>
         </p>
       </div>
     </div>
