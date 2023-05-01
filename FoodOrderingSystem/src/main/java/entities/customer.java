@@ -72,6 +72,8 @@ public class customer {
 		pnumber = "";
 		email = "";
 		password = "";
+		log_email = "";
+		log_passsword = "";
 	}
 
 }

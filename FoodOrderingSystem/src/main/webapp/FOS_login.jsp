@@ -20,7 +20,7 @@
                 <div class="col-md-6 right">
                      <div class="input-box">
                         <header>Login account</header>
-                         <form method="post" action="Login-customer">
+                         <form method='post' action="Login-customer">
                         <div class="input-field">
                             <input type="email" class="input" id="log_email" name="log_email" required>
                             <label>E-mail</label>
