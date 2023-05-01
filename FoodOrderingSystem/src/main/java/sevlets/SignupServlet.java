@@ -6,40 +6,40 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import dao.EmployeeDAO;
-import entities.Employee;
+import dao.customerDAO;
+import entities.customer;
 
-@WebServlet("/employee-create")
-public class InsertServlet extends HttpServlet {
+/**
+ * Servlet implementation class SighnupServlet
+ */
+@WebServlet("/Signup-customer")
+public class SignupServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
 		String name=request.getParameter("name");
 		String pnumber=request.getParameter("pnumber");
 		String email=request.getParameter("email");
 		String password=request.getParameter("password");
 		
 		//Set values to student object
-		Employee st=new Employee();
+		customer st=new customer();
 		st.setName(name);
-		st.setNIC(pnumber);
-		st.setDepartment(email);
-		st.setDesignation(password);
+		st.setPnumber(pnumber);
+		st.setEmail(email);
+		st.setPassword(password);
 		
 		//Invoke  insert method in DAO class
-		EmployeeDAO stdao=new EmployeeDAO();
+		customerDAO stdao=new customerDAO();
 		boolean result= stdao.insert(st);
 		if(result) {
-			response.sendRedirect("employee-list.jsp");
+			response.sendRedirect("FOS_menu.jsp");
 		}else {
 			response.getOutputStream().print("Something went wrong");
-			response.sendRedirect("new-employee.jsp");
+			response.sendRedirect("FOS_signup.jsp");
 		}
-		
-		
 	}
 
 }

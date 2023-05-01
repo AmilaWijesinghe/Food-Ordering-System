@@ -17,7 +17,7 @@
                 </div>
                 <div class="col-md-6 right">
                      <div class="input-box">
-                        <form action="">
+                        <form method='post' action="Signup-customer">
                         <header>Create account</header>
 
                         <div class="input-field">
@@ -26,7 +26,7 @@
                         </div>
                         
                         <div class="input-field">
-                            <input type="text" class="input" id="name" required>
+                            <input type="text" class="input" id="pnumber" required>
                             <label >Phone number</label>
                         </div>
                         
@@ -38,10 +38,12 @@
                         <div class="input-field">
                             <input type="password" class="input" id="password" required>
                             <label>Password</label>
+                            </div>
 
                         <div class="input-field">
                             <input type="password" class="input" id="password" required>
                             <label>Confirm password</label>
+                            </div>
 
                         <div class="input-field">
                             <input type="submit" class="submit" value="Sign Up">
