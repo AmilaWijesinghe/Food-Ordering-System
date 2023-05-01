@@ -6,39 +6,39 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import dao.customerDAO;
 import entities.customer;
 
 /**
- * Servlet implementation class SighnupServlet
+ * Servlet implementation class LoginServlet
  */
-@WebServlet("/Signup-customer")
-public class SignupServlet extends HttpServlet {
+@WebServlet("/Login-customer")
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
 
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String name=request.getParameter("name");
-		String pnumber=request.getParameter("pnumber");
-		String email=request.getParameter("email");
-		String password=request.getParameter("password");
+
+		String log_email=request.getParameter("log_email");
+		String log_password=request.getParameter("log_password");
 		
 		//Set values to student object
 		customer st=new customer();
-		st.setName(name);
-		st.setPnumber(pnumber);
-		st.setEmail(email);
-		st.setPassword(password);
+		st.setLog_email(log_email);
+		st.setLog_passsword(log_password);
 		
 		//Invoke  insert method in DAO class
 		customerDAO stdao=new customerDAO();
-		boolean result= stdao.signup(st);
+		boolean result= stdao.login(st);
 		if(result) {
 			response.sendRedirect("FOS_menu.jsp");
 		}else {
 			response.getOutputStream().print("Something went wrong");
-			response.sendRedirect("FOS_signup.jsp");
+			response.sendRedirect("FOS_login.jsp");
 		}
 	}
 

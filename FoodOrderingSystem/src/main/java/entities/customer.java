@@ -7,6 +7,8 @@ public class customer {
 	private String pnumber;
 	private String email;
 	private String password;
+	private String log_email;
+	private String log_passsword;
 
 	public int getId() {
 		return id;
@@ -46,6 +48,22 @@ public class customer {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getLog_email() {
+		return log_email;
+	}
+
+	public void setLog_email(String log_email) {
+		this.log_email = log_email;
+	}
+
+	public String getLog_passsword() {
+		return log_passsword;
+	}
+
+	public void setLog_passsword(String log_passsword) {
+		this.log_passsword = log_passsword;
 	}
 
 	public customer() {

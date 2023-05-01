@@ -20,14 +20,15 @@
                 <div class="col-md-6 right">
                      <div class="input-box">
                         <header>Login account</header>
-                         <form action="">
+                         <form method="post" action="Login-customer">
                         <div class="input-field">
-                            <input type="email" class="input" id="email" required>
+                            <input type="email" class="input" id="log_email" name="log_email" required>
                             <label>E-mail</label>
                         </div>
                         <div class="input-field">
-                            <input type="password" class="input" id="password" required>
+                            <input type="password" class="input" id="log_password" name="log_password" required>
                             <label>Password</label>
+                            </div>
                         <div class="input-field">
                             <input type="submit" class="submit" value="Sign Up">
                         </div>

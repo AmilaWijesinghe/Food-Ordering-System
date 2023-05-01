@@ -21,27 +21,27 @@
                         <header>Create account</header>
 
                         <div class="input-field">
-                            <input type="text" class="input" id="name" required>
+                            <input type="text" class="input" id="name" name="name" required>
                             <label>Name</label>
                         </div>
                         
                         <div class="input-field">
-                            <input type="text" class="input" id="pnumber" required>
+                            <input type="text" class="input" id="pnumber" name="pnumber" required>
                             <label >Phone number</label>
                         </div>
                         
                         <div class="input-field">
-                            <input type="email" class="input" id="email" required autocomplete="off">
+                            <input type="email" class="input" id="email" name="email" required autocomplete="off">
                             <label>Email</label>
                         </div>
 
                         <div class="input-field">
-                            <input type="password" class="input" id="password" required>
+                            <input type="password" class="input" id="password" name="password" required>
                             <label>Password</label>
                             </div>
 
                         <div class="input-field">
-                            <input type="password" class="input" id="password" required>
+                            <input type="password" class="input" id="Cpassword" name="Cpassword" required>
                             <label>Confirm password</label>
                             </div>
 
