@@ -1,6 +1,8 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -40,21 +42,19 @@ public class customerDAO {
 	}
 	
 	public boolean login(customer st) {
-		String query=" SELECT count(*) as total from user WHERE U_Email = '"+st.getLog_email()+"' and U_Pwd = '"+st.getLog_passsword()+"' ";
-		try {
-			
-			Statement stmt=con.createStatement();
-			int result= stmt.executeUpdate(query);
-			if(result > 0) {
-				return true;
-			}else {
-				return false;
-			}
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-			return false;
-		}
+	    String query = "SELECT COUNT(*) AS total FROM user WHERE U_Email = ? AND U_Pwd = ?";
+	    try (PreparedStatement pstmt = con.prepareStatement(query)) {
+	        pstmt.setString(1, st.getLog_email());
+	        pstmt.setString(2, st.getLog_passsword());
+	        ResultSet rs = pstmt.executeQuery();
+	        if (rs.next()) {
+	            int result = rs.getInt("total");
+	            return result > 0;
+	        }
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    }
+	    return false;
 	}
 
 }
