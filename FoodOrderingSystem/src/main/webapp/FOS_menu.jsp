@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 
@@ -163,6 +164,8 @@
 
       <div class="filters-content">
         <div class="row grid">
+        
+        
           <div class="col-sm-6 col-lg-4 all pizza">
             <div class="box">
               <div>
@@ -239,6 +242,8 @@
               </div>
             </div>
           </div>
+          
+            <c:forEach items="${customerDAO.getAllCustomers()}" var="customer">
           <div class="col-sm-6 col-lg-4 all burger">
             <div class="box">
               <div>
@@ -247,10 +252,10 @@
                 </div>
                 <div class="detail-box">
                   <h5>
-                    Whopper Beef Burger
+                    ${customer.getP_Name()}
                   </h5>
                   <p>
-                     Whopper is a flame-grilled beef burger.
+                    ${customer.getP_Description()}
                   </p>
                   <div class="options">
                     <h6>
@@ -315,6 +320,7 @@
               </div>
             </div>
           </div>
+           </c:forEach>
           <div class="col-sm-6 col-lg-4 all pizza">
             <div class="box">
               <div>

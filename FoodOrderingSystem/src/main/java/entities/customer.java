@@ -9,6 +9,11 @@ public class customer {
 	private String password;
 	private String log_email;
 	private String log_passsword;
+	private String P_Id;
+	private String P_Name;
+	private String P_Description;
+	private String P_Price;
+	private String product_image;
 
 	public int getId() {
 		return id;
@@ -64,6 +69,46 @@ public class customer {
 
 	public void setLog_passsword(String log_passsword) {
 		this.log_passsword = log_passsword;
+	}
+
+	public String getP_Id() {
+		return P_Id;
+	}
+
+	public void setP_Id(String p_Id) {
+		P_Id = p_Id;
+	}
+
+	public String getP_Name() {
+		return P_Name;
+	}
+
+	public void setP_Name(String p_Name) {
+		P_Name = p_Name;
+	}
+
+	public String getP_Description() {
+		return P_Description;
+	}
+
+	public void setP_Description(String p_Description) {
+		P_Description = p_Description;
+	}
+
+	public String getP_Price() {
+		return P_Price;
+	}
+
+	public void setP_Price(String p_Price) {
+		P_Price = p_Price;
+	}
+
+	public String getProduct_image() {
+		return product_image;
+	}
+
+	public void setProduct_image(String product_image) {
+		this.product_image = product_image;
 	}
 
 	public customer() {
