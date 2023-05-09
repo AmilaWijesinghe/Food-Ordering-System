@@ -17,11 +17,9 @@ import utilities.MySQLConnect2;
 public class customerDAO {
 
 	private Connection con;
-	private MySQLConnect2 connector;
-	public customerDAO(MySQLConnect2 connector) {
+	public customerDAO() {
 		try {
 			con=MySQLConnect2.connectDB();
-			this.connector = connector;
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
@@ -72,48 +70,5 @@ public class customerDAO {
 	
 
 	
-	 public List<customer> getAllCustomers() {
-		 
-	        List<customer> customers = new ArrayList<>();
-	        Connection con = null;
-	        PreparedStatement statement = null;
-	        ResultSet resultSet = null;
-	        
-
-	        try  {
-	        	
-	        	con = connector.getConnection();
-	            // get a connection from the database connector
-	        	String query = "SELECT P_Name,P_Description FROM product";
-	            statement = con.prepareStatement(query);
-	            resultSet = statement.executeQuery();
-	            // iterate over the result set and create Customer objects
-	            while (resultSet.next()) {
-	                String P_Name = resultSet.getString("P_Name");
-	                String P_Description = resultSet.getString("P_Description");
-	                customer customer = new customer();
-	                customers.add(customer);
-	            }
-	        } catch (SQLException e) {
-	            e.printStackTrace();
-	        } finally {
-	            // close the database resources
-	            try {
-	                if (resultSet != null) {
-	                    resultSet.close();
-	                }
-	                if (statement != null) {
-	                    statement.close();
-	                }
-	                if (con != null) {
-	                	con.close();
-	                }
-	                
-	            } catch (SQLException e) {
-	                e.printStackTrace();
-	            }
-	        }
-
-	        return customers;
-	    }
+	 
 }

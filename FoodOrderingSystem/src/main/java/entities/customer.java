@@ -111,7 +111,7 @@ public class customer {
 		this.product_image = product_image;
 	}
 
-	public customer() {
+	public customer(String P_Name, String P_Description) {
 
 		name = "";
 		pnumber = "";
@@ -119,6 +119,11 @@ public class customer {
 		password = "";
 		log_email = "";
 		log_passsword = "";
+		 P_Id = "";
+		 P_Name= "";
+		 P_Description ="";
+		 P_Price="";
+		 product_image="";
 	}
 
 }

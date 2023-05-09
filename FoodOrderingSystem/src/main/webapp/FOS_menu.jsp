@@ -243,7 +243,7 @@
             </div>
           </div>
           
-            <c:forEach items="${customerDAO.getAllCustomers()}" var="customer">
+            <c:forEach items="${menuDAO.getAllCustomers()}" var="customer">
           <div class="col-sm-6 col-lg-4 all burger">
             <div class="box">
               <div>
