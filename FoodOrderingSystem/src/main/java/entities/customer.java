@@ -9,11 +9,13 @@ public class customer {
 	private String password;
 	private String log_email;
 	private String log_passsword;
-	private String P_Id;
+	private int P_Id;
 	private String P_Name;
 	private String P_Description;
 	private String P_Price;
 	private String product_image;
+	private String session;
+
 
 	public int getId() {
 		return id;
@@ -71,11 +73,12 @@ public class customer {
 		this.log_passsword = log_passsword;
 	}
 
-	public String getP_Id() {
+	
+	public int getP_Id() {
 		return P_Id;
 	}
 
-	public void setP_Id(String p_Id) {
+	public void setP_Id(int p_Id) {
 		P_Id = p_Id;
 	}
 
@@ -111,7 +114,18 @@ public class customer {
 		this.product_image = product_image;
 	}
 
-	public customer(String P_Name, String P_Description) {
+
+	public String getSession() {
+		return session;
+	}
+
+	public void setSession(String session) {
+		this.session = session;
+	}
+
+
+
+	public customer() {
 
 		name = "";
 		pnumber = "";
@@ -119,11 +133,13 @@ public class customer {
 		password = "";
 		log_email = "";
 		log_passsword = "";
-		 P_Id = "";
-		 P_Name= "";
-		 P_Description ="";
-		 P_Price="";
-		 product_image="";
+		P_Id = 0 ;
+		P_Name = "";
+		P_Description ="";
+		P_Price ="";
+		product_image="";
+
+
 	}
 
 }

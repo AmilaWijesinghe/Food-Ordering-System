@@ -11,6 +11,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import entities.Employee;
 import entities.customer;
 import utilities.MySQLConnect2;
 
@@ -68,7 +69,56 @@ public class customerDAO {
 	    return false;
 	}
 	
+	public ArrayList<customer> getAll(){
+		ArrayList<customer> customerList=new ArrayList<customer>();
+		String query="SELECT * FROM product";
+		
+		try {
+			Statement stmt=con.createStatement();
+			ResultSet rs=stmt.executeQuery(query);
+			while(rs.next()) {
+			
+				String P_Name=rs.getString("P_Name");
+				String P_Price=rs.getString("P_Price");
+				String P_Description=rs.getString("P_Description");
+			
+				
+				customer st=new customer();
+				
 
+				st.setP_Name(P_Name);
+				st.setP_Description(P_Description);
+				st.setP_Price(P_Price);
+
+				
+				customerList.add(st);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return customerList;
+		}
+		return customerList;
+	}
 	
+	
+	public boolean InsertintoCart(customer st) {
+	    String query = "select * from product";
+	    try {
+	        PreparedStatement pstmt = con.prepareStatement(query);
+	        
+    
+
+	        int result = pstmt.executeUpdate();
+	        if (result > 0) {
+	            return true;
+	        } else {
+	            return false;
+	        }
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	        return false;
+	    }
 	 
+    }
 }
