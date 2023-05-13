@@ -41,7 +41,7 @@ public class CartItem {
 		// TODO Auto-generated constructor stub
 		order_name = "";
 		order_price = "";
-		qty = 1;
+		qty = 0;
 		
 		
 	}

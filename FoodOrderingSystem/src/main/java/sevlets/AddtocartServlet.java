@@ -22,18 +22,18 @@ public class AddtocartServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	
     	HttpSession session = request.getSession();
-    	
-    	
     	Cart cart = (Cart) session.getAttribute("cart");
     	
     	String order_name = request.getParameter("name");
         String order_price = request.getParameter("price");
-        
+        int qty = 1;
 
         CartItem item = new CartItem();
         item.setOrder_name(order_name);
         item.setOrder_price(order_price);
+        item.setQty(qty);
         
         cart.addItem(item);
         response.sendRedirect("FOS_menu.jsp");
