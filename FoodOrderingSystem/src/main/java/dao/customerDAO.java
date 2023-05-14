@@ -11,7 +11,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import entities.Employee;
+
 import entities.customer;
 import utilities.MySQLConnect2;
 
@@ -77,19 +77,23 @@ public class customerDAO {
 			Statement stmt=con.createStatement();
 			ResultSet rs=stmt.executeQuery(query);
 			while(rs.next()) {
-			
+				int P_Id = rs.getInt("P_Id");
 				String P_Name=rs.getString("P_Name");
 				String P_Price=rs.getString("P_Price");
 				String P_Description=rs.getString("P_Description");
-			
+				String image_path =rs.getString("image_path");
+				String category =rs.getString("category");
+				
 				
 				customer st=new customer();
 				
-
+				st.setP_Id(P_Id);
 				st.setP_Name(P_Name);
 				st.setP_Description(P_Description);
 				st.setP_Price(P_Price);
-
+				st.setImage_path(image_path);
+				st.setCategory(category);
+				
 				
 				customerList.add(st);
 			}

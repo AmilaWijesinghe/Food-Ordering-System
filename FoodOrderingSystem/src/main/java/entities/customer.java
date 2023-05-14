@@ -13,8 +13,9 @@ public class customer {
 	private String P_Name;
 	private String P_Description;
 	private String P_Price;
-	private String product_image;
-	private String session;
+	private String image_path;
+	private String category;
+	
 
 
 	public int getId() {
@@ -73,7 +74,8 @@ public class customer {
 		this.log_passsword = log_passsword;
 	}
 
-	
+
+
 	public int getP_Id() {
 		return P_Id;
 	}
@@ -105,25 +107,23 @@ public class customer {
 	public void setP_Price(String p_Price) {
 		P_Price = p_Price;
 	}
+	
 
-	public String getProduct_image() {
-		return product_image;
+	public String getImage_path() {
+		return image_path;
 	}
 
-	public void setProduct_image(String product_image) {
-		this.product_image = product_image;
+	public void setImage_path(String image_path) {
+		this.image_path = image_path;
 	}
 
-
-	public String getSession() {
-		return session;
+	public String getCategory() {
+		return category;
 	}
 
-	public void setSession(String session) {
-		this.session = session;
+	public void setCategory(String category) {
+		this.category = category;
 	}
-
-
 
 	public customer() {
 
@@ -137,9 +137,7 @@ public class customer {
 		P_Name = "";
 		P_Description ="";
 		P_Price ="";
-		product_image="";
-
-
+		
 	}
 
 }

@@ -1,22 +1,15 @@
 
 <%@page import="dao.customerDAO"%>
 <%@page import="entities.customer"%>
-<%@page import="dao.Cart"%>
+    <%@page import="utilities.Cart"%>
+    <%@page import="entities.CartItem"%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
-<%
-    // Retrieve or create the cart for the current customer
-    
-    Cart cart = (Cart) session.getAttribute("cart");
-    if (cart == null) {
-        cart = new Cart();
-        session.setAttribute("cart", cart);
-    }
-%>
+
 <head>
   <!-- Basic -->
   <meta charset="utf-8" />
@@ -180,17 +173,18 @@
         
           <% for(customer c:new customerDAO().getAll()){ %>
         <form method="post" action="Addtocart-product">
-          <div class="col-sm-6 col-lg-4 all burger">
+          <div class="col-sm-6 col-lg-4 all <%=c.getCategory() %>">
             <div class="box">
               <div>
                 <div class="img-box">
-                  <img src="f2.png" alt="">
+                  <img src="<%=c.getImage_path() %>" alt="">
                 </div>
                 <div class="detail-box">
                   <h5>
                   <%=c.getP_Name() %>
                   <input type="hidden" name="name" value=" <%=c.getP_Name() %>">
-              
+                   <input type="hidden" name="id" value=" <%=c.getP_Id() %>">
+                   
                   </h5>
                   <p>
                   <%=c.getP_Description() %>
@@ -199,10 +193,8 @@
                     <h6>
                       Rs.<%=c.getP_Price() %>
                        <input type="hidden" name="price" value=" <%=c.getP_Price() %>">
-                    
                     </h6>
-                    
-                   <button  type="submit"  class="btn btn-primary"></button>
+                   <button type="submit" class="btn btn-primary"></button>
                   </div>
                 </div>
               </div>
