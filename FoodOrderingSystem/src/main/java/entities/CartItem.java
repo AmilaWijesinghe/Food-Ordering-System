@@ -6,6 +6,7 @@ public class CartItem {
     private String itemName;
     private int quantity;
     private double price;
+    private String image_path;
     
 	
 	
@@ -35,11 +36,18 @@ public class CartItem {
 	}
 
 
-    public CartItem(String itemId, String itemName, int quantity, double price) {
+    public String getImage_path() {
+		return image_path;
+	}
+	public void setImage_path(String image_path) {
+		this.image_path = image_path;
+	}
+	public CartItem(String itemId, String itemName, int quantity, double price, String image_path) {
         this.itemId = itemId;
         this.itemName = itemName;
         this.quantity = quantity;
         this.price = price;
+        this.image_path = image_path;
     }
 
 

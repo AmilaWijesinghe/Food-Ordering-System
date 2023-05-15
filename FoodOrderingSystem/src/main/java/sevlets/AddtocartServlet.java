@@ -29,9 +29,10 @@ public class AddtocartServlet extends HttpServlet {
          String itemName = request.getParameter("name");
          int quantity = 1;
          double price = Double.parseDouble(request.getParameter("price"));
+         String image_path = request.getParameter("image_path");
 
          // Create cart item
-         CartItem item = new CartItem(itemId, itemName, quantity, price);
+         CartItem item = new CartItem(itemId, itemName, quantity, price ,image_path);
 
          // Retrieve cart from session or create a new one
          HttpSession session = request.getSession();

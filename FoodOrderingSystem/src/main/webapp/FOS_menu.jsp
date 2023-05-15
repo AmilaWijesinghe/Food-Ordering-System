@@ -80,7 +80,7 @@
               <a href="" class="user_link">
                 <i class="fa fa-user" aria-hidden="true"></i>
               </a>
-              <a class="cart_link" href="#">
+              <a class="cart_link" href="FOS_cart.jsp">
                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                   <g>
                     <g>
@@ -139,9 +139,7 @@
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
               </form>
-              <a href="" class="order_online">
-                Order Online
-              </a>
+             
             </div>
           </div>
         </nav>
@@ -178,6 +176,7 @@
               <div>
                 <div class="img-box">
                   <img src="<%=c.getImage_path() %>" alt="">
+                  <input type="hidden" name="image_path" value=" <%=c.getImage_path() %>">
                 </div>
                 <div class="detail-box">
                   <h5>
@@ -194,7 +193,7 @@
                       Rs.<%=c.getP_Price() %>
                        <input type="hidden" name="price" value=" <%=c.getP_Price() %>">
                     </h6>
-                   <button type="submit" class="btn btn-primary"></button>
+                   <button type="submit" class="btn btn-primary" style="background-color: #ffbe33; color: white;">Add to cart</button>
                   </div>
                 </div>
               </div>

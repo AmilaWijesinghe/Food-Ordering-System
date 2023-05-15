@@ -8269,3 +8269,15 @@ h1, h2, h3, h4, h5,
   color: #000; }
   .checkbox-primary input:checked ~ .checkmark:after {
     color: #000; }
+  #checkout{
+  background-color: #000;
+  color: white;
+  width: 500px;
+  height: 100px;
+   
+  
+  
+  }   
+    
+    
+    

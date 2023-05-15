@@ -26,20 +26,25 @@ public class LoginServlet extends HttpServlet {
 		String log_email=request.getParameter("log_email");
 		String log_password=request.getParameter("log_password");
 		
-		//Set values to student object
-		customer st=new customer();
-		st.setLog_email(log_email);
-		st.setLog_passsword(log_password);
-		
-		//Invoke  insert method in DAO class
-		customerDAO stdao=new customerDAO();
-		boolean result= stdao.login(st);
-		if(result) {
-			response.sendRedirect("FOS_menu.jsp");
+		if(log_email.equals("kusal@gmail.com")&& log_password.equals("1234")) {
+			response.sendRedirect("newFood.jsp");
 		}else {
-			response.getOutputStream().print("Something went wrong");
-			response.sendRedirect("FOS_login.jsp");
+			customer st=new customer();
+			st.setLog_email(log_email);
+			st.setLog_passsword(log_password);
+			
+			//Invoke  insert method in DAO class
+			customerDAO stdao=new customerDAO();
+			boolean result= stdao.login(st);
+			if(result) {
+				response.sendRedirect("FOS_menu.jsp");
+			}else {
+				response.getOutputStream().print("Something went wrong");
+				response.sendRedirect("FOS_login.jsp");
+			}
 		}
+		//Set values to student object
+		
 	}
 
 }

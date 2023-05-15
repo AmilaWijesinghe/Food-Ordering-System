@@ -16,6 +16,7 @@
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
+<form method="get" action="RemovefromCart-product">
 <section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">
@@ -26,6 +27,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="table-wrap">
+					 <form method="get" action="RemovefromCart-product">
 						<table class="table">
 						  <thead class="thead-primary">
 						    <tr>
@@ -38,9 +40,9 @@
 						      <th>&nbsp;</th>
 						    </tr>
 						  </thead>
+						
 						  <tbody>
 						   <% for (CartItem item : Cart.getItems()) { %>
-						   
 						    <tr class="alert" role="alert">
 						    	<td>
 						    		<label class="checkbox-wrap checkbox-primary">
@@ -49,7 +51,7 @@
 										</label>
 						    	</td>
 						    	<td>
-						    		<div class="img" style="background-image: url(f1.png);"></div>
+						    		<div class="img" style="background-image: url(<%=item.getImage_path() %>);"></div>
 						    	</td>
 						      <td>
 						      	<div class="email">
@@ -57,22 +59,28 @@
 						      		
 						      	</div>
 						      </td>
-						      <td><%=item.getPrice() %></td>
+						      <td>Rs.<%=item.getPrice() %></td>
 						      <td class="quantity">
 					        	<div class="input-group">
-				             	<input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100" data-price="44.99" >
+				             	<input type="number" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100" data-price="<%=item.getPrice() %>" >
 				          	</div>
 				          </td>
-				          <td class="total-price">$44.99</td>
+				          <td class="total-price">Rs.<%=item.getPrice() %></td>
 						      <td>
-						      	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						       
+						      	<button type="submit" class="close" data-dismiss="alert" aria-label="Close">
 				            	<span aria-hidden="true"><i class="fa fa-close"></i></span>
 				          	</button>
-				        	</td>
+				          	 <input type="hidden" name="itemId" value=" <%=item.getItemId() %>">
+				          	</td>
+
 						    </tr>
 						    <% } %>
 						  </tbody>
+						
 						</table>
+						   
+						</form>
 					</div>
 				</div>
 			</div>
@@ -97,11 +105,13 @@
     var totalPrice = price * quantity;
 
     // Update the total price column
-    $(this).closest('tr').find('.total-price').html('$' + totalPrice.toFixed(2));
+    $(this).closest('tr').find('.total-price').html('Rs.' + totalPrice.toFixed(2));
   });
 });
 
 	</script>
-	
+	</form>
+	<button id="checkout" style="background-color: #000; color: white; width:150px; height:50px; position: relative; left: 1360px; bottom:95px;">checkout</button>
+	<a href="FOS_menu.jsp"><button id="checkout" style="background-color: #000; color: white; width:150px; height:50px; position: relative; left: 245px; bottom:95px;">Back</button></a>
 </body>
 </html>
