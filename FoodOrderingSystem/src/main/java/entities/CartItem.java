@@ -35,7 +35,6 @@ public class CartItem {
 		this.price = price;
 	}
 
-
     public String getImage_path() {
 		return image_path;
 	}
