@@ -6,7 +6,7 @@ import java.util.List;
 import entities.CartItem;
 
 public class Cart {
-	private static List<CartItem> items;
+    private static List<CartItem> items;
 
     public Cart() {
         items = new ArrayList<>();

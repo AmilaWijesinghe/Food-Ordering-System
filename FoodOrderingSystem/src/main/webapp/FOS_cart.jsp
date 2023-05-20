@@ -16,7 +16,7 @@
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-<form method="get" action="RemovefromCart-product">
+
 <section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">
@@ -27,7 +27,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="table-wrap">
-					 <form method="get" action="RemovefromCart-product">
+					
 						<table class="table">
 						  <thead class="thead-primary">
 						    <tr>
@@ -62,25 +62,25 @@
 						      <td>Rs.<%=item.getPrice() %></td>
 						      <td class="quantity">
 					        	<div class="input-group">
-				             	<input type="number" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100" data-price="<%=item.getPrice() %>" >
+				             	<input type="number" name="quantity" class="quantity form-control input-number" value="<%=item.getQuantity() %>" min="1" max="100" data-price="<%=item.getPrice() %>" >
 				          	</div>
 				          </td>
 				          <td class="total-price">Rs.<%=item.getPrice() %></td>
 						      <td>
-						       
-						      	<button type="submit" class="close" data-dismiss="alert" aria-label="Close">
+						        
+						      	<a href="RemovefromCart-product?"<%=item.getItemId() %> ><button type="submit" class="close" data-dismiss="alert" aria-label="Close">
 				            	<span aria-hidden="true"><i class="fa fa-close"></i></span>
-				          	</button>
-				          	 <input type="hidden" name="itemId" value=" <%=item.getItemId() %>">
+				          	</button></a>
+				          	
 				          	</td>
-
+							
 						    </tr>
 						    <% } %>
 						  </tbody>
 						
 						</table>
 						   
-						</form>
+						
 					</div>
 				</div>
 			</div>
@@ -110,8 +110,9 @@
 });
 
 	</script>
-	</form>
-	<button id="checkout" style="background-color: #000; color: white; width:150px; height:50px; position: relative; left: 1360px; bottom:95px;">checkout</button>
+
+	<a href="UpdateQuantityServlet"><button id="checkout" style="background-color: #000; color: white; width:150px; height:50px; position: relative; left: 1360px; bottom:95px;">checkout</button></a>
+	
 	<a href="FOS_menu.jsp"><button id="checkout" style="background-color: #000; color: white; width:150px; height:50px; position: relative; left: 245px; bottom:95px;">Back</button></a>
 </body>
 </html>

@@ -29,6 +29,7 @@ public class updateFoodServlet extends HttpServlet {
 		String description=request.getParameter("description");
 		String imagepath=request.getParameter("imgpath");
 		String category=request.getParameter("category");
+		
 		foodItems food=new foodItems();
 
 		food.setId(id);
@@ -41,6 +42,7 @@ public class updateFoodServlet extends HttpServlet {
 
 		foodItemDAO fooddao=new foodItemDAO();
 		boolean result= fooddao.update(food);
+		
 		if(result) {
 			response.sendRedirect("newFood.jsp");
 		}else {

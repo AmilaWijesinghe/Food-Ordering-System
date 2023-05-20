@@ -251,7 +251,7 @@ table.table .avatar {
 	font-weight: normal;
 }
 .edit-btn, .delete-btn {
-    background-color: #4CAF50; /* Green */
+    background-color: #ffbe33; /* Green */
     border: none;
     color: white;
     padding: 10px 20px;
@@ -265,11 +265,11 @@ table.table .avatar {
   }
   
   .edit-btn:hover, .delete-btn:hover {
-    background-color: #3e8e41;
+    background-color: #A52A2A;
   }
   
   .edit-btn:active, .delete-btn:active {
-    background-color: #3e8e41;
+    background-color: #A52A2A;
     transform: translateY(1px);
   }
    /* Style the select element */
@@ -290,6 +290,197 @@ option {
   padding: 8px;
   font-size: 16px;
 }
+body {
+  align-items: center;
+  background-color: #FFFFFF ;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.form {
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  height: 850px;
+  padding: 30px;
+  width: 500px;
+  border: 2px solid black; /* Adds a 1px solid black border */
+  
+}
+
+.title {
+  color: #000000;
+  font-family: sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.subtitle {
+  color: #000000;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.input-container {
+  height: 50px;
+  position: relative;
+  width: 100%;
+  
+}
+
+.ic1 {
+  margin-top: 40px;
+}
+
+.ic2 {
+  margin-top: 30px;
+}
+
+.input {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  font-size: 18px;
+  height: 100%;
+  outline: 0;
+  padding: 4px 20px 0;
+  width: 100%;
+}
+
+.cut {
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  height: 20px;
+  left: 20px;
+  position: absolute;
+  top: -20px;
+  transform: translateY(0);
+  transition: transform 200ms;
+  width: 76px;
+}
+
+.cut-short {
+  width: 50px;
+}
+
+.input:focus ~ .cut,
+.input:not(:placeholder-shown) ~ .cut {
+  transform: translateY(8px);
+}
+
+.placeholder {
+  color: #000000;
+  font-family: sans-serif;
+  left: 20px;
+  line-height: 14px;
+  pointer-events: none;
+  position: absolute;
+  transform-origin: 0 50%;
+  transition: transform 200ms, color 200ms;
+  top: 20px;
+}
+
+.input:focus ~ .placeholder,
+.input:not(:placeholder-shown) ~ .placeholder {
+  transform: translateY(-30px) translateX(10px) scale(0.75);
+}
+.select:focus ~ .placeholder,
+.select:not(:placeholder-shown) ~ .placeholder {
+  transform: translateY(-30px) translateX(10px) scale(0.75);
+}
+
+.input:not(:placeholder-shown) ~ .placeholder {
+  color: #808097;
+}
+
+.input:focus ~ .placeholder {
+  color: #dc2f55;
+}
+
+.submit {
+  background-color: #ffbe33;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  font-size: 18px;
+  height: 50px;
+  margin-top: 38px;
+  outline: 0;
+  text-align: center;
+  width: 100%;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.submit:hover {
+  background-color: #ffa500;
+  transform: scale(1.05);
+}
+.submit:active {
+  background-color: #06b;
+}
+.input {
+border: 1px solid black; 
+  padding: 5px;
+  appearance: none;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+ 
+  box-sizing: border-box;
+  color: #000000;
+  font-size: 18px;
+  height: 100%;
+  outline: 0;
+  padding: 4px 20px 0;
+  width: 100%;
+  position: relative;
+}
+
+.select:focus {
+  outline: none;
+}
+
+.select-arrow {
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.select-placeholder {
+  color: #65657b;
+  font-family: sans-serif;
+  line-height: 14px;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 20px;
+  transition: transform 200ms, color 200ms;
+  transform-origin: 0 50%;
+}
+
+.select:focus ~ .select-placeholder,
+.select:not(:placeholder-shown) ~ .select-placeholder {
+  transform: translateY(-30px) translateX(10px) scale(0.75);
+}
+
+.select:not(:placeholder-shown) ~ .select-placeholder {
+  color: #808097;
+}
+
+.select:focus ~ .select-placeholder {
+  color: #dc2f55;
+}
+
    
 </style>
 <script>
@@ -359,10 +550,10 @@ $(document).ready(function(){
                     <td><%=element.getCategory()%></td>
                     <td>
                         <a href="updateFood.jsp?id=<%=element.getId()%>">
-                            <button class="edit-btn">EDIT</button>
+                            <button class="edit-btn btn btn1">EDIT</button>
                         </a>&nbsp; &nbsp;
                         <a href="deleteFood.jsp?id=<%=element.getId()%>">
-                            <button class="delete-btn">DELETE</button>
+                            <button class="delete-btn btn btn2">DELETE</button>
                         </a>
                     </td>
                 </tr>
@@ -373,58 +564,59 @@ $(document).ready(function(){
 			
 	 </div>        
 </div> 
+
+
+
+
 <!-- Add Modal HTML -->
 <div id="addEmployeeModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<form action="addFood" method="post">
-			<div class="modal-header">						
-					<h4 class="modal-title">Add Food</h4>
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				</div>
-				<div class="modal-body">					
-					<div class="form-group">
-						<label>Food Name</label>
-						<input type="text" name="fname" id="fname" class="form-control" required>
-					</div>
-					<div class="form-group">
-						<label>Food Price</label>
-						<input type="number" name="fprice" id="fprice" class="form-control" required>
-					</div>
-					<div class="form-group">
-						<label>Food Qty</label>
-						<input type="number" name="fquantity" id="fquantity" class="form-control" required>
-					</div>
-					<div class="form-group">
-						<label>Food Description</label>
-						<input type="text" name="description" id="description" class="form-control" required>
-					
-					</div>	
-					<div class="form-group">
-						<label>Image Path</label>
-						<input type="text" name="imgpath" id="imgpath" class="form-control" required>
-					
-					</div>
-					<div class="form-group">
-						<label for="dropdown">Select a Category:</label>
- 						 <select id="category" name="category">
-   						 <option value="option1">Burger </option>
-    					 <option value="option2">Pizza</option>
-   						 <option value="option3">Pasta</option>
-   						 <option value="option2">Price</option>
-   						 
- 						 </select>
-						
-					</div>
-												
-				</div>
-				<div class="modal-footer">
-					<input type="button" class="btn btn-default" data-dismiss="modal"  value="Cancel">
-					<input type="submit" class="btn btn-success" value="Add">
-					
-					
-					
-				</div>
+			    <div class="form">
+      <div class="title">Add new food item</div>
+      <div class="subtitle">Enter the details here and submit</div>
+      <div class="input-container ic1">
+        <input  class="input" type="text" placeholder=" " name="fname" id="fname" required>
+        <div class="cut"></div>
+        <label for="food_name" class="placeholder">Enter Food name</label>
+      </div>
+      <div class="input-container ic2">
+        <input  class="input" type="text" placeholder=" " name="fprice" id="fprice" required >
+        <div class="cut"></div>
+        <label for="food_price" class="placeholder">Enter Food Price</label>
+      </div>
+      <div class="input-container ic2">
+        <input  class="input" type="text" placeholder=" " name="fquantity" id="fquantity" required>
+        <div class="cut"></div>
+        <label for="food_qty" class="placeholder">Enter Food Quantity</label>
+      </div>
+      <div class="input-container ic2">
+        <input  class="input" type="text" placeholder=" " name="description" id="description" required>
+        <div class="cut"></div>
+        <label for="food_description" class="placeholder">Enter Food Description</label>
+      </div>
+      <div class="input-container ic2">
+        <input  class="input" type="text" placeholder=" " name="imgpath" id="imgpath" required>
+        <div class="cut"></div>
+        <label for="food_imagepath" class="placeholder">Enter Image Path</label>
+      </div>
+     <div class="input-container ic2">
+  <select class="input" name="category" id="category" required>
+    <option value="Select a category" disabled selected class="select-placeholder">Select a category</option>
+    <option value="Burger" >Burger</option>
+    <option value="Pizza">Pizza </option>
+    <option value="Pasta" >Pasta</option>
+    <option value="Fries" >Fries</option>
+  </select>
+  <div class="cut"></div>
+  <label for="category" class="placeholder">Category</label>
+</div>
+
+  
+      <button type="submit" class="submit">submit</button>
+         <button type="button" class="submit" onclick="window.location.href='newFood.jsp'">Cancel</button>
+    </div>
 				</form>
 				</div>
 				</div>
