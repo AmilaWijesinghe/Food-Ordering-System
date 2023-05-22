@@ -21,8 +21,13 @@
                         <header>Create account</header>
 
                         <div class="input-field">
-                            <input type="text" class="input" id="name" name="name" required>
-                            <label>Name</label>
+                            <input type="text" class="input" id="first_name" name="first_name" required>
+                            <label>First Name</label>
+                        </div>
+                        
+                         <div class="input-field">
+                            <input type="text" class="input" id="last_name" name="last_name" required>
+                            <label>Last Name</label>
                         </div>
                         
                         <div class="input-field">
@@ -33,6 +38,11 @@
                         <div class="input-field">
                             <input type="email" class="input" id="email" name="email" required autocomplete="off">
                             <label>Email</label>
+                        </div>
+                        
+                        <div class="input-field">
+                            <input type="text" class="input" id="address" name="address" required>
+                            <label>Address</label>
                         </div>
 
                         <div class="input-field">

@@ -3,7 +3,9 @@ package entities;
 public class customer {
 	
 	private int id;
-	private String name;
+	private String first_name;
+	private String last_name;
+	private String address;
 	private String pnumber;
 	private String email;
 	private String password;
@@ -26,12 +28,29 @@ public class customer {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+
+	public String getFirst_name() {
+		return first_name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setFirst_name(String first_name) {
+		this.first_name = first_name;
+	}
+
+	public String getLast_name() {
+		return last_name;
+	}
+
+	public void setLast_name(String last_name) {
+		this.last_name = last_name;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	public String getPnumber() {
@@ -127,7 +146,9 @@ public class customer {
 
 	public customer() {
 
-		name = "";
+		first_name = "";
+	    last_name = "";
+		address = "";
 		pnumber = "";
 		email = "";
 		password = "";

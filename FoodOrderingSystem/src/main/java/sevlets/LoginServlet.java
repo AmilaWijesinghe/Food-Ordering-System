@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.customerDAO;
 import entities.customer;
@@ -37,6 +38,11 @@ public class LoginServlet extends HttpServlet {
 			customerDAO stdao=new customerDAO();
 			boolean result= stdao.login(st);
 			if(result) {
+				HttpSession session = request.getSession();
+				session.setAttribute("user_email", log_email);
+				session.setAttribute("isLoggedIn", true);
+				 
+				
 				response.sendRedirect("FOS_menu.jsp");
 			}else {
 				response.getOutputStream().print("Something went wrong");

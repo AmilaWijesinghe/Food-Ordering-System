@@ -75,7 +75,13 @@
 				          	</td>
 							
 						    </tr>
+						    
 						    <% } %>
+						    <tr>
+								<td colspan="5" class="text-right"> <strong>Final Amount:</strong></td>
+								<strong><td id="final-amount">Rs.0.00</td></strong>
+								<td>&nbsp;</td>
+							</tr>
 						  </tbody>
 						
 						</table>
@@ -86,32 +92,12 @@
 			</div>
 		</div>
 	</section>
-
-	<script src="js/jquery.min.js"></script>
+	<script src="js/localStorage.js"></script>
+  <script src="js/jquery.min.js"></script>
   <script src="js/popper.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/main.js"></script>
-	<script>
-		$(document).ready(function() {
-  // Listen for changes to quantity inputs
-  $('.quantity input').on('input', function() {
-    // Get the price of the item
-    var price = parseFloat($(this).data('price'));
-
-    // Get the new quantity
-    var quantity = parseInt($(this).val());
-
-    // Calculate the new total price
-    var totalPrice = price * quantity;
-
-    // Update the total price column
-    $(this).closest('tr').find('.total-price').html('Rs.' + totalPrice.toFixed(2));
-  });
-});
-
-	</script>
-
-	<a href="UpdateQuantityServlet"><button id="checkout" style="background-color: #000; color: white; width:150px; height:50px; position: relative; left: 1360px; bottom:95px;">checkout</button></a>
+	<a ><button id="checkout" style="background-color: #000; color: white; width:150px; height:50px; position: relative; left: 1360px; bottom:95px;">checkout</button></a>
 	
 	<a href="FOS_menu.jsp"><button id="checkout" style="background-color: #000; color: white; width:150px; height:50px; position: relative; left: 245px; bottom:95px;">Back</button></a>
 </body>

@@ -30,6 +30,9 @@ public class Cart {
     }
 
     public static List<CartItem> getItems() {
+    	 if (items.isEmpty()) {
+    		 System.out.println("The list is empty.");
+    	    }
         return items;
     }
     

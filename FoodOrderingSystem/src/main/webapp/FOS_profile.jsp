@@ -1,3 +1,4 @@
+<%@page import="dao.customerDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -12,6 +13,11 @@
 </head>
 <body>
 <section class="py-5 my-5">
+	<% 
+	customerDAO aa=new customerDAO();
+	aa.userProfile(request, response);
+	%>
+	<form action="Loguot-Servlet" method="post">
 		<div class="container">
 			<h1 class="mb-5">Your Account</h1>
 			<div class="bg-white shadow rounded-lg d-block d-sm-flex">
@@ -20,10 +26,10 @@
 						<div class="img-circle text-center mb-3">
 							<img src="user2.png" alt="Image" class="shadow">
 						</div>
-						<h4 class="text-center">Amila Wijesighe</h4>
+						<h4 class="text-center"><%= request.getAttribute("first_name") %> <%= request.getAttribute("last_name") %></h4>
 					</div>
 					<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-						<a class="nav-link active" id="account-tab" data-toggle="pill" href="#account" role="tab" aria-controls="account" aria-selected="true">
+						<a class="nav-link active" id="account-tab" data-toggle="pill" href="FOS_menu.jsp" role="tab" aria-controls="account" aria-selected="true">
 							<i class="fa fa-home text-center mr-1"></i> 
 							Account
 						</a>
@@ -37,39 +43,43 @@
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>First Name</label>
-								  	<input type="text" class="form-control" value="Amila" readonly>
+								  	<input type="text" class="form-control" value="<%= request.getAttribute("first_name") %>" readonly>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>Last Name</label>
-								  	<input type="text" class="form-control" value="Wijesighe" readonly>
+								  	<input type="text" class="form-control" value="<%= request.getAttribute("last_name") %>" readonly>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>Email</label>
-								  	<input type="text" class="form-control" value="Amila@gmail.com" readonly>
+								  	<input type="text" class="form-control" value="<%= request.getAttribute("email") %>" readonly>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>Phone number</label>
-								  	<input type="text" class="form-control" value="+94 9876543215" readonly>
+								  	<input type="text" class="form-control" value="<%= request.getAttribute("phone_number") %>" readonly>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 								  	<label>Address</label>
-								  	<input type="text" class="form-control" value="kandy rd, peradeniya" readonly>
+								  	<input type="text" class="form-control" value="<%= request.getAttribute("address") %>" readonly>
 								</div>
+								
 							</div>
+							
 							<button class="btn btn-primary" id="update-btn">Logout</button>
+							
 						</div>
 					</div>			
 				</div>
 			</div>
 		</div>
+	</form>
 	</section>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>

@@ -64,7 +64,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mx-auto ">
               <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home </a>
+                <a class="nav-link" href="FOS_index.jsp">Home </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="FOS_menu.jsp">Menu <span class="sr-only">(current)</span> </a>
@@ -77,7 +77,7 @@
               </li>
             </ul>
             <div class="user_option">
-              <a href="" class="user_link">
+              <a href="FOS_profile.jsp" class="user_link">
                 <i class="fa fa-user" aria-hidden="true"></i>
               </a>
               <a class="cart_link" href="FOS_cart.jsp">
