@@ -20,14 +20,6 @@ public class Cart {
         items.removeIf(item -> item.getItemId().equals(itemId));
     }
 
-    public void updateQuantity(String itemId, int quantity) {
-        for (CartItem item : items) {
-            if (item.getItemId().equals(itemId)) {
-                item.setQuantity(quantity);
-                break;
-            }
-        }
-    }
 
     public static List<CartItem> getItems() {
     	 if (items.isEmpty()) {
@@ -37,11 +29,4 @@ public class Cart {
     }
     
     
-    public double getTotalPrice() {
-        double total = 0;
-        for (CartItem item : items) {
-            total += item.getPrice() * item.getQuantity();
-        }
-        return total;
-    }
 }

@@ -47,10 +47,10 @@ $(document).ready(function() {
     restoreQuantity(); // Call restoreQuantity() on page load
     updateTotalPrice();
     
-    $('#checkout').click(function() {
-        localStorage.clear();
+    //$('#checkout').click(function() {
+       // localStorage.clear();
         // Optional: Reload the page after clearing the data
         // location.reload();
         
-    });
+   // });
 });

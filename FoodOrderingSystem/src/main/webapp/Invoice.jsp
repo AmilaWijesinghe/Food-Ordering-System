@@ -1,3 +1,6 @@
+    <%@page import="utilities.Cart"%>
+    <%@page import="entities.CartItem"%>
+    <%@page import="dao.customerDAO"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <style type="text/css">
 body{margin-top:20px;
 background:#ffffff;
@@ -114,8 +118,12 @@ tbody, td, tfoot, th, thead, tr {
    
 <div class="card">
 <div class="card-body p-5">
+<% 
+	customerDAO aa=new customerDAO();
+	aa.invoice(request, response);
+	%>
 <h2>
-Hey Amila,
+Hey <%= request.getAttribute("first_name") %>,
 </h2>
 <a href=""><i class="fa fa-close" style="font-size:25px; color: #000; position: relative; left: 665px; bottom: 85px;"></i></a>
 <p class="fs-sm">
@@ -140,7 +148,7 @@ This is the receipt for a payment of <strong>0.00</strong> (RS) you made to Spac
 <div class="col-md-6">
 <div class="text-muted mb-2">Client</div>
 <strong>
-Amila Wijesighe
+<%= request.getAttribute("first_name") %> <%= request.getAttribute("last_name") %>
 </strong>
 <p class="fs-sm">
 Kandy
@@ -154,7 +162,7 @@ Kandy
 Burger Hut
 </strong>
 <p class="fs-sm">
-Peradenita raod, kandy
+<%= request.getAttribute("address") %>
 <br>
 </a>
 </p>
@@ -169,14 +177,12 @@ Peradenita raod, kandy
 </tr>
 </thead>
 <tbody>
+ <% for (CartItem item : Cart.getItems()) { %>
 <tr>
-<td class="px-0">Chicken Pizza</td>
-<td class="text-end px-0">RS 0.00</td>
+<td class="px-0"><%=item.getItemName() %></td>
+<td class="text-end px-0">Rs.<%=item.getPrice() %></td>
 </tr>
-<tr>
-<td class="px-0">Burger</td>
-<td class="text-end px-0">RS 0.00</td>
-</tr>
+  <% } %>
 </tbody>
 </table>
 <div class="mt-5">
@@ -186,11 +192,11 @@ Peradenita raod, kandy
 </div>
 <div class="d-flex justify-content-end mt-3">
 <h5 class="me-3">Total:</h5>
-<h5 class="text-success">RS 0.00</h5>
+<h5 class="text-success" id="final-amount">RS 0.00</h5>
 </div>
 </div>
 </div>
-<a href="#!" class="btn btn-dark btn-lg card-footer-btn justify-content-center text-uppercase-bold-sm hover-lift-light">
+<a href="FOS_menu.jsp" class="btn btn-dark btn-lg card-footer-btn justify-content-center text-uppercase-bold-sm hover-lift-light">
 <span class="svg-icon text-white me-2">
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewbox="0 0 512 512"><title>ionicons-v5-g</title><path d="M336,208V113a80,80,0,0,0-160,0v95" style="fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"></path><rect x="96" y="208" width="320" height="272" rx="48" ry="48" style="fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"></rect></svg>
 </span>
@@ -200,6 +206,12 @@ Pay Now
 </div>
 </div>
 </div>
+  <script src="js/localStorage.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+<script src="js/localStorage.js"></script>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript"></script>

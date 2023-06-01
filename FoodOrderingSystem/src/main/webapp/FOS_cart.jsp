@@ -97,7 +97,7 @@
   <script src="js/popper.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/main.js"></script>
-	<a ><button id="checkout" style="background-color: #000; color: white; width:150px; height:50px; position: relative; left: 1360px; bottom:95px;">checkout</button></a>
+	<a href="Invoice.jsp"><button id="checkout" style="background-color: #000; color: white; width:150px; height:50px; position: relative; left: 1360px; bottom:95px;">checkout</button></a>
 	
 	<a href="FOS_menu.jsp"><button id="checkout" style="background-color: #000; color: white; width:150px; height:50px; position: relative; left: 245px; bottom:95px;">Back</button></a>
 </body>

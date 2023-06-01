@@ -171,4 +171,44 @@ public class customerDAO {
 	        
 	    }
 	}
+	
+	
+public void invoice( HttpServletRequest request, HttpServletResponse response) {
+		
+		
+		try {
+				HttpSession session = request.getSession();
+			    String user_email = (String) session.getAttribute("user_email");
+			    String query = "SELECT * FROM user WHERE email = ?";
+		        PreparedStatement statement = con.prepareStatement(query);
+		        statement.setString(1, user_email);
+		        ResultSet resultSet = statement.executeQuery();
+			 
+			if (resultSet.next()) {
+			    String first_name = resultSet.getString("first_name");
+			    String last_name = resultSet.getString("last_name");
+			    int phone_number = resultSet.getInt("phone_number");
+			    String email = resultSet.getString("email");
+			    String address = resultSet.getString("address");
+			    // ... retrieve other column values as needed
+			    request.setAttribute("first_name", first_name);
+			    request.setAttribute("last_name", last_name);
+			    request.setAttribute("phone_number", phone_number);
+			    request.setAttribute("email", email);
+			    request.setAttribute("address", address);
+			    
+			    RequestDispatcher dispatcher = request.getRequestDispatcher("Invoice.jsp");
+                dispatcher.forward(request, response);
+			}else {
+                // Handle case where no data is found
+				response.sendRedirect("FOS_login.jsp");
+            }
+			
+	       
+	        
+	    } catch (SQLException | ServletException | IOException  e) {
+	         e.printStackTrace();
+	        
+	    }
+	}
 }
