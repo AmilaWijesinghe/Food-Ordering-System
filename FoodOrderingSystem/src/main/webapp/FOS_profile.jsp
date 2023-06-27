@@ -17,7 +17,7 @@
 	customerDAO aa=new customerDAO();
 	aa.userProfile(request, response);
 	%>
-	<form action="Loguot-Servlet" method="post">
+	
 		<div class="container">
 			<h1 class="mb-5">Your Account</h1>
 			<div class="bg-white shadow rounded-lg d-block d-sm-flex">
@@ -72,14 +72,14 @@
 								
 							</div>
 							
-							<button class="btn btn-primary" id="update-btn">Logout</button>
+							<a class="btn-primary" href="Logout-Servlet"><button class="btn-primary" id="update-btn">Logout</button> </a>
 							
 						</div>
 					</div>			
 				</div>
 			</div>
 		</div>
-	</form>
+	
 	</section>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>

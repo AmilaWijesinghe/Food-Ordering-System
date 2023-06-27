@@ -101,7 +101,7 @@
                       Our burger restaurant is the perfect place to satisfy your cravings for a juicy, delicious burger. We use only the freshest ingredients and our burgers are made to order. We also have a wide variety of toppings to choose from, so you can create your perfect burger. Whether you're in the mood for a classic cheeseburger or something more adventurous, we have something for everyone.
                     </p>
                     <div class="btn-box">
-                      <a href="" class="btn1">
+                      <a href=" " class="btn1">
                         Order Now
                       </a>
                     </div>
