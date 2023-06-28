@@ -125,7 +125,7 @@ tbody, td, tfoot, th, thead, tr {
 <h2>
 Hey <%= request.getAttribute("first_name") %>,
 </h2>
-<a href=""><i class="fa fa-close" style="font-size:25px; color: #000; position: relative; left: 665px; bottom: 85px;"></i></a>
+<a href="FOS_cart.jsp"><i class="fa fa-close" style="font-size:25px; color: #000; position: relative; left: 665px; bottom: 85px;"></i></a>
 <p class="fs-sm">
 This is the receipt for a payment of <strong>0.00</strong> (RS) you made to Spacial Foods.
 </p>

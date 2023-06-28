@@ -13,7 +13,7 @@ import utilities.Cart;
 /**
  * Servlet implementation class RemovefromCart
  */
-@WebServlet("/RemovefromCart-product")
+@WebServlet("/RemovefromCart")
 public class RemovefromCart extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -29,25 +29,13 @@ public class RemovefromCart extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
-		// Retrieve item ID from request parameter
-        String itemId = request.getParameter("itemId");
 
-        // Retrieve cart from session
-        HttpSession session = request.getSession();
-        Cart cart = (Cart) session.getAttribute("cart");
-
-        // Remove item from cart
-        if (cart != null) {
-            cart.removeItem(itemId);
-        }
-
-        // Redirect to cart page
-        response.sendRedirect( "FOS_cart.jsp");
+        
+        String id=request.getParameter("id");
+		Cart.removeItem(id);
+		  response.sendRedirect( "FOS_cart.jsp");
+	        
     }
-	
 
 }
 

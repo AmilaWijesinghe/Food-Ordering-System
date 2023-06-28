@@ -19,46 +19,37 @@
                      <div class="input-box">
                         <form method='post' action="Signup-customer">
                         <header>Create account</header>
-
                         <div class="input-field">
                             <input type="text" class="input" id="first_name" name="first_name" required>
                             <label>First Name</label>
                         </div>
-                        
                          <div class="input-field">
                             <input type="text" class="input" id="last_name" name="last_name" required>
                             <label>Last Name</label>
                         </div>
-                        
                         <div class="input-field">
                             <input type="text" class="input" id="pnumber" name="pnumber" required>
                             <label >Phone number</label>
                         </div>
-                        
                         <div class="input-field">
                             <input type="email" class="input" id="email" name="email" required autocomplete="off">
                             <label>Email</label>
                         </div>
-                        
                         <div class="input-field">
                             <input type="text" class="input" id="address" name="address" required>
                             <label>Address</label>
                         </div>
-
                         <div class="input-field">
                             <input type="password" class="input" id="password" name="password" required>
                             <label>Password</label>
                             </div>
-
                         <div class="input-field">
                             <input type="password" class="input" id="Cpassword" name="Cpassword" required>
                             <label>Confirm password</label>
                             </div>
-
                         <div class="input-field">
                             <input type="submit" class="submit" value="Sign Up">
                         </div>
-                        
                         <div class="signin">
                         <span>Already have an account? <a href="FOS_login.jsp">Log in here</a></span>
                         </div>

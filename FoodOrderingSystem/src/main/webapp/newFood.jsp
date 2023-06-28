@@ -18,113 +18,140 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <style>
 
-body {
-		background-color:#fff;
-
-	font-family: 'Varela Round', sans-serif; */
-	
-	
-}
-.table-responsive {
-    margin: 30px 0;
-    overflow-x: auto;
+  body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
     
+    .container-xl {
+      padding: 20px;
+    }
+    
+    .table-responsive {
+      overflow-x: auto;
+    }
+    
+    .table-wrapper {
+     
+      padding: 20px;
+      border-radius: 3px;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .table-title {
+ padding: 15px 0;
+  margin-bottom: 20px;
+  background-color: #f8f8f8;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+    }
+    
+    .table-title h2 {
+ margin: 5px 0;
+  font-size: 24px;
+  text-align: left;
+  color: #333;
+  text-transform: uppercase;
+  font-weight: bold;
+    }
+    
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    
+    .table th,
+    .table td {
+      padding: 12px 15px;
+      border: 1px solid #dee2e6;
+    }
+    
+    .table thead th {
+      background-color: #343a40;
+      color: #fff;
+      border-color: #343a40;
+      text-transform: uppercase;
+      position: sticky;
+      top: ;
+      z-index: 1;
+        text-align: center;
+    }
+    
+    .table tbody td {
+      font-size: 14px;
+    }
+    
+    .table tbody tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    
+
+.table-title .btn-success {
+ color: #fff;
+  background-color: #4caf50;
+  border: none;
+  padding: 15px 25px;
+  font-size: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: right;
+  margin-left: auto;
 }
-.table-wrapper {
-	background: #fff;
-	padding: 20px 25px;
-	border-radius: 3px;
-	min-width: 1000px;
-	box-shadow: 0 1px 1px rgba(0,0,0,.05);
+.btn-success i {
+  margin-right: 5px;
 }
-.table-title {        
-	padding-bottom: 15px;
-	background: black;
-	color: #fff;
-	padding: 16px 30px;
-	min-width: 100%;
-	margin: -20px -25px 10px;
-	border-radius: 3px 3px 0 0;
+.btn-success:hover {
+  background-color: #45a049;
 }
-.table-title h2 {
-	margin: 5px 0 0;
-	font-size: 24px;
+
+.btn-success:active {
+  background-color: #3d8b3d;
 }
-.table-title .btn-group {
-	float: right;
-}
-.table-title .btn {
-	background-color: #ffbe33;
-	color:white;
-	float: right;
-	font-size: 13px;
-	border: none;
-	min-width: 50px;
-	/* border-radius: 2px; */
-	border: none;
-	outline: none !important;
-	margin-left: 10px;
-}
-.table-title .btn i {
-	float: left;
-	font-size: 21px;
-	margin-right: 5px;
-}
-.table-title .btn span {
-	float: left;
-	margin-top: 2px;
-}
-table.table tr th, table.table tr td {
-	border-color: #e9e9e9;
-	padding: 12px 15px;
-	vertical-align: middle;
-}
-table.table tr th:first-child {
-	width: 60px;
-}
-table.table tr th:last-child {
-	width: 100px;
-}
-table.table-striped tbody tr:nth-of-type(odd) {
-	background-color: #fcfcfc;
-}
-table.table-striped.table-hover tbody tr:hover {
-	background: #f5f5f5;
-}
-table.table th i {
-	font-size: 13px;
-	margin: 0 5px;
-	cursor: pointer;
-}	
-table.table td:last-child i {
-	opacity: 0.9;
-	font-size: 22px;
-	margin: 0 5px;
-}
-table.table td a {
-	font-weight: bold;
-	color: #566787;
-	display: inline-block;
-	text-decoration: none;
-	outline: none !important;
-}
-table.table td a:hover {
-	color: #2196F3;
-}
- table.table td a.edit { 
- 	color: #FFC107; 
- } */
- table.table td a.delete { 
- 	color: #F44336; 
- } */
-table.table td i {
-	font-size: 19px;
-}
-table.table .avatar {
-	border-radius: 50%;
-	vertical-align: middle;
-	margin-right: 10px;
-}
+  
+    .btn1 {
+      margin-right: 5px;
+    }
+    
+    .btn2 {
+      margin-left: 5px;
+    }
+    
+    @media screen and (max-width: 576px) {
+      .table-responsive {
+        overflow-x: auto;
+      }
+      
+      .table-title {
+        text-align: center;
+      }
+      
+      .text-right {
+        text-align: center !important;
+      }
+      
+      .table-wrapper {
+        padding: 10px;
+      }
+      
+      .table thead th {
+        font-size: 14px;
+      }
+      
+      .table tbody td {
+        font-size: 14px;
+        padding: 8px 10px;
+      }
+      
+      .btn-success {
+        font-size: 12px;
+        padding: 8px 12px;
+      }
+    }
+
 .pagination {
 	float: right;
 	margin: 0 0 5px;
@@ -289,13 +316,6 @@ select {
 option {
   padding: 8px;
   font-size: 16px;
-}
-body {
-  align-items: center;
-  background-color: #FFFFFF ;
-  display: flex;
-  justify-content: center;
-  height: 100vh;
 }
 
 .form {
@@ -515,55 +535,53 @@ $(document).ready(function(){
 		<div class="table-wrapper">
 			<div class="table-title">
 				<div class="row">
-					<div class="col-sm-6">
-						<h2><b>Manage</b>  <b>Food</b></h2>
+					<div class="col-lg-6 col-md-6 col-sm-6">
+						<h2><b>Manage Food</b></h2>
 					</div>
-					<div class="col-sm-6">
+					<div class="col-lg-6 col-md-6 col-sm-6 text-right">
 						<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Food</span></a>
-												
 					</div>
 				</div>
 			</div>
 			<table class="table table-striped table-hover">
-    <thead>
-        <tr>
-            <th></th>
-            <th>Food Name</th>
-            <th>Food price</th>
-            <th>Food qty</th>
-            <th>Food Description</th>
-            <th>Image path</th>
-            <th>Category</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        <% ArrayList<foodItems> foodList=new foodItemDAO().getAll();
-            for(foodItems element : foodList){ %>
-                <tr>
-                    <td><%=element.getId()%></td>
-                    <td><%=element.getFname()%></td>
-                    <td><%=element.getFprice()%></td>
-                    <td><%=element.getFquantity() %></td>
-                    <td><%=element.getDescription()%></td>
-                    <td><%=element.getImgpath() %></td>
-                    <td><%=element.getCategory()%></td>
-                    <td>
-                        <a href="updateFood.jsp?id=<%=element.getId()%>">
-                            <button class="edit-btn btn btn1">EDIT</button>
-                        </a>&nbsp; &nbsp;
-                        <a href="deleteFood.jsp?id=<%=element.getId()%>">
-                            <button class="delete-btn btn btn2">DELETE</button>
-                        </a>
-                    </td>
-                </tr>
-            <% } %>
-    </tbody>
-</table>
-					
-			
-	 </div>        
-</div> 
+				<thead>
+					<tr>
+						<th></th>
+						<th>Food Name</th>
+						<th>Food price</th>
+						<th>Food qty</th>
+						<th>Food Description</th>
+						<th>Image path</th>
+						<th>Category</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<% ArrayList<foodItems> foodList=new foodItemDAO().getAll();
+						for(foodItems element : foodList){ %>
+						<tr>
+							<td><%=element.getId()%></td>
+							<td><%=element.getFname()%></td>
+							<td><%=element.getFprice()%></td>
+							<td><%=element.getFquantity() %></td>
+							<td><%=element.getDescription()%></td>
+							<td><%=element.getImgpath() %></td>
+							<td><%=element.getCategory()%></td>
+							<td>
+								<a href="updateFood.jsp?id=<%=element.getId()%>">
+									<button class="edit-btn btn btn1">EDIT</button>
+								</a>&nbsp; &nbsp;
+								<a href="deleteFood.jsp?id=<%=element.getId()%>">
+									<button class="delete-btn btn btn2">DELETE</button>
+								</a>
+							</td>
+						</tr>
+					<% } %>
+				</tbody>
+			</table>
+		</div>        
+	</div> 
+</div>
 
 
 

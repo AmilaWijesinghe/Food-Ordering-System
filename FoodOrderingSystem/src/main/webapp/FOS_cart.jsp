@@ -42,7 +42,11 @@
 						  </thead>
 						
 						  <tbody>
-						   <% for (CartItem item : Cart.getItems()) { %>
+						   <%
+						   try{
+							   for (CartItem item : Cart.getItems()) {
+							      
+							   %>
 						    <tr class="alert" role="alert">
 						    	<td>
 						    		<label class="checkbox-wrap checkbox-primary">
@@ -68,7 +72,7 @@
 				          <td class="total-price">Rs.<%=item.getPrice() %></td>
 						      <td>
 						        
-						      	<a href="RemovefromCart-product?"<%=item.getItemId() %> ><button type="submit" class="close" data-dismiss="alert" aria-label="Close">
+						      	<a href="RemovefromCart?id=<%=item.getItemId() %>" ><button type="submit" class="close" data-dismiss="alert" aria-label="Close">
 				            	<span aria-hidden="true"><i class="fa fa-close"></i></span>
 				          	</button></a>
 				          	
@@ -76,7 +80,11 @@
 							
 						    </tr>
 						    
-						    <% } %>
+						    <% }
+						   }catch (Exception e){
+							   response.sendRedirect( "CartisEmpty.jsp");
+						   }  
+							   %>
 						    <tr>
 								<td colspan="5" class="text-right"> <strong>Final Amount:</strong></td>
 								<strong><td id="final-amount">Rs.0.00</td></strong>
